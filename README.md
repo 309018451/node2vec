@@ -2,7 +2,7 @@
 
 *This is a Python3 implementation of Stanford University's node2vec model*
 
-## General Methodology of node2vec:
+## General Methodology of node2vec
 
 1. Compute transition probabilities for all the nodes. (2nd order Markov chain)
 
@@ -11,11 +11,12 @@
 3. Generate embeddings with SGD
 
 
-## Pre-requisites:
+### Pre-requisites
 
 Install pre-reqs by running the following command:
 `pip3 install -r req.txt`
 
+## Usage
 
 To run node2vec with default arguments, execute the following command from the home directory:
 `python3 src/main.py`
@@ -50,7 +51,7 @@ optional arguments:
 *Note: Zachary's Karate club network is used by default if no argument is provided for the input flag. Do check the default values in main.py*
 
 
-## Example Usage:
+### Example Usage:
 
 To generate embeddings for Zachary's Karate Network() with custom arguments, the following can be used
 ```
