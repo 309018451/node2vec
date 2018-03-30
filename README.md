@@ -53,13 +53,13 @@ optional arguments:
 
 ### Example Usage:
 
-To generate embeddings for Zachary's Karate Network() with custom arguments, the following can be used
+To generate embeddings for Zachary's Karate club network with custom arguments, the following can be used
 ```
 python3 src/main.py --p 0.4 --q 1 --walks 20 --length 80 --d 256
 ```
 
 
-## The model will be evaluated and a consolidated report will be posted soon
+### The model will be evaluated and a consolidated report will be posted soon
 
 
 **References:**
