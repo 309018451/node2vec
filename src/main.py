@@ -60,6 +60,7 @@ def generate_embeddings(corpus, dimensions, window_size, num_workers, p, q, inpu
         file_name = re.split('[. /]', input_file)
         output_file = 'embeddings/' + file_name[-2] + '_embeddings_'+'dim-' + str(dimensions) + '_p-'+ str(p)+'_q-'+str(q)+'.txt'
     
+    print('Saved embeddings at : ',output_file)
     w2v_emb.save_word2vec_format(output_file)
 
     return model, w2v_emb
