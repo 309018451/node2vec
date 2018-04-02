@@ -7,6 +7,7 @@ import argparse
 import numpy as np
 import networkx as nx
 import node2vec
+import scipy.io
 from collections import defaultdict
 from time import perf_counter
 from datetime import timedelta
