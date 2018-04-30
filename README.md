@@ -59,11 +59,15 @@ python3 src/main.py --p 0.4 --q 1 --walks 20 --length 80 --d 256
 ```
 
 
-### The model will be evaluated and a consolidated report will be posted soon
+Consolidated report with performance benchmarks are included in node2vec_report.pdf
 
 
 **References:**
 
 [node2vec: Scalable Feature Learning for Networks - Aditya Grover, Jure Leskovec](https://cs.stanford.edu/~jure/pubs/node2vec-kdd16.pdf)
+
+
+
+Contact me at apoorva.v94@gmail.com
 
 
