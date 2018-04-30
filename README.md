@@ -59,7 +59,7 @@ python3 src/main.py --p 0.4 --q 1 --walks 20 --length 80 --d 256
 ```
 
 
-Consolidated report with performance benchmarks are included in node2vec_report.pdf
+## Consolidated report with performance benchmarks are included in node2vec_report.pdf
 
 
 **References:**
