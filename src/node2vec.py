@@ -25,7 +25,6 @@ def timer(msg):
     return inner
 
 
-
 class Graph():
     
     def __init__(self, graph, probs, p, q, max_walks, walk_len, workers):
@@ -61,32 +60,33 @@ class Graph():
         
         return
     
+    
     @timer('Generating Biased Random Walks')
-    def generate_random_walks(self):
+    def generate_random_walks(self,start_node):
         
         G = self.graph
         walks = list()
-        for start_node in G.nodes():
-            for i in range(self.max_walks):
-                
-                walk = [start_node]
-                walk_options = list(G[start_node])
+        for i in range(self.max_walks):
+            
+            walk = [start_node]
+            walk_options = list(G[start_node])
+            if len(walk_options)==0:
+                break
+            first_step = np.random.choice(walk_options)
+            walk.append(first_step)
+            
+            for k in range(self.walk_len-2):
+                walk_options = list(G[walk[-1]])
                 if len(walk_options)==0:
                     break
-                first_step = np.random.choice(walk_options)
-                walk.append(first_step)
-                
-                for k in range(self.walk_len-2):
-                    walk_options = list(G[walk[-1]])
-                    if len(walk_options)==0:
-                        break
-                    probabilities = self.probs[walk[-2]]['probabilities'][walk[-1]]
-                    next_step = np.random.choice(walk_options, p=probabilities)
-                    walk.append(next_step)
-                
-                walks.append(walk)
+                probabilities = self.probs[walk[-2]]['probabilities'][walk[-1]]
+                next_step = np.random.choice(walk_options, p=probabilities)
+                walk.append(next_step)
+            
+            walks.append(walk)
         np.random.shuffle(walks)
         walks = [list(map(str,walk)) for walk in walks]
-        
+        for index,thing in enumerate(walks):
+            walks[index]=(thing.split("_")[0]) 
         return walks
 
